@@ -1,6 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
 using UnityEngine;
+using System.IO;
+using Dijkstra.NET.Model;
+using Dijkstra.NET.ShortestPath;
+
 
 public class Truck_1_Mover : MonoBehaviour 
 {
@@ -19,10 +22,40 @@ public class Truck_1_Mover : MonoBehaviour
 	void Start () 
 	{
 		my_collection = FindObjectOfType<WaypointCollection> ();
-	}
+
+        //temp implementation start
+        string filepath = @"C:\Users\csabh\Desktop\RouteIdentifier.json";
+        string json;
+
+        using (StreamReader srReader = new StreamReader(filepath))
+        {
+            json = srReader.ReadToEnd();
+        }
+        JObject jObjJsonFromBackend = JObject.Parse(json);
+
+        //Object for the Shortest path lib for handling all the queries to the library
+        ProfiterShortestPathLib profiterShortestPathObj = new ProfiterShortestPathLib();
+
+        //Extract the Routes from the JSON received from the backend for further processig of the routes on the
+        //and for the constructing the shortest route
+        JObject jObjRoutesJosn = profiterShortestPathObj.ExtractRoutes(jObjJsonFromBackend);
+
+        //Create the graph for the routes for usagae in DIJSKTRA algo based shortest path identification
+        Graph<int, string> rputeGraphForDijkstra = profiterShortestPathObj.CreatesRouteGraph(jObjJsonFromBackend, jObjRoutesJosn);
+
+        var dijkstra = new Dijkstra<int, string>(rputeGraphForDijkstra);
+
+        string source = "kashmir", destination = "kanyakumari";
+        var shortestRoute = profiterShortestPathObj.GetShortestPath(source, destination, dijkstra);
+        foreach (var item in shortestRoute)
+        {
+            Debug.Log(item);
+        }
+        //temp implementation end
+    }
 
 
-	void Update ()
+    void Update ()
 	{
 		if (car_1_go) 
 		{
