@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 913, y: 342}
   m_MaxSize: {x: 22008, y: 10021}
   vertical: 0
-  controlID: 62
+  controlID: 43
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,7 +162,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 14}
   m_Selected: 1
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,8 +361,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 760
-    height: 439
+    width: 950
+    height: 581
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
   lastFramingTime: 10349.442556603413
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
-    name: 
-    section: 
+    name: Shaded
+    section: Shading Mode
   m_ValidateTrueMetals: 0
   m_SceneViewState:
     showFog: 1
@@ -494,10 +494,10 @@ MonoBehaviour:
     height: 936
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 553}
-    m_SelectedIDs: ba2d0000f42d0000822f00004c2e0000c82d000038300000c22f0000ae2d0000542d0000022f0000802e0000
-    m_LastClickedID: 11904
-    m_ExpandedIDs: 20fbffff00000000102d0000282d0000962d0000c02d0000fa2d0000302e00003a2e0000582e0000c02e0000f62e0000dc2f0000e82f000002300000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 5c300000
+    m_LastClickedID: 12380
+    m_ExpandedIDs: 1cfbffff000000002a2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -564,14 +564,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 51
-  m_LastProjectPath: C:\Users\csabh\Documents\GitHub\profitier-game_Latest
+  m_LastProjectPath: C:\Users\csabh\Documents\GitHub\profitier-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 242a0000
     m_LastClickedID: 10788
-    m_ExpandedIDs: 00000000242a00000a2b000090300000ffffff7f
+    m_ExpandedIDs: 00000000242a00000a2b000092300000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,7 +599,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000242a00000a2b000090300000
+    m_ExpandedIDs: 00000000242a00000a2b000092300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
