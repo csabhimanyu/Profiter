@@ -39,27 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
-    uniqueID: 4239061075
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: lower_road
-    uniqueID: 3927224715
-    locked: 0
-  - name: Roads
+  - name: Water
     uniqueID: 3004405861
     locked: 0
-  - name: circle_roads
-    uniqueID: 643238915
-    locked: 0
-  - name: Connector
-    uniqueID: 1430887129
-    locked: 0
-  - name: Map_Points
+  - name: UI
     uniqueID: 330391207
     locked: 0
-  - name: Car
+  - name: Map_Icons
     uniqueID: 3089705499
     locked: 0
