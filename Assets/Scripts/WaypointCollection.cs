@@ -14,4 +14,5 @@ public class WaypointCollection:MonoBehaviour
 		//chennai_to_assam = (GameObject.FindGameObjectWithTag ("Chennai_To_Assam")).GetComponentsInChildren<Transform> ();
 	}
 
+
 }

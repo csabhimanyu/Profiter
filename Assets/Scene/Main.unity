@@ -4584,8 +4584,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1290561435
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c1083ef84198764a93023ec20434a8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6832,7 +6832,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1274634768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.1, y: -1.46, z: 0}
+  m_LocalPosition: {x: 45.6, y: -1.46, z: 0}
   m_LocalScale: {x: 0.78, y: 0.78, z: 1}
   m_Children: []
   m_Father: {fileID: 1906134799}
@@ -6870,7 +6870,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 643238915
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 27fed1e7bd6aa8e43a2589af58de4b25, type: 3}
@@ -9698,6 +9698,7 @@ GameObject:
   - component: {fileID: 1895382263}
   - component: {fileID: 1895382262}
   - component: {fileID: 1895382261}
+  - component: {fileID: 1895382265}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9768,6 +9769,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1895382265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1895382260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c21ad359968470ba3b2044f3584841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainWidth: 1
+  adaptPosition: -1
 --- !u!1 &1901770821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11146,6 +11160,7 @@ GameObject:
   - component: {fileID: 2141188424}
   - component: {fileID: 2141188426}
   - component: {fileID: 2141188425}
+  - component: {fileID: 2141188427}
   m_Layer: 5
   m_Name: Chennai
   m_TagString: Untagged
@@ -11212,3 +11227,13 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2141188423}
+--- !u!210 &2141188427
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141188423}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
