@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{5BDB3431-6373-41B7-FC93-7C496A156380}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/camerascreenresolution.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Auto Letterbox/ForceCameraRatio.cs">
     <Files>
-      <File FileName="Assets/Scripts/WaypointCollection.cs" Line="16" Column="5" />
-      <File FileName="Assets/Scripts/camerascreenresolution.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Cards/Card Management.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Camera/camerascreenresolution.cs" Line="1" Column="1" />
+      <File FileName="Assets/CameraResolution.cs" Line="53" Column="5" />
+      <File FileName="Assets/Test.cs" Line="53" Column="3" />
+      <File FileName="Assets/Auto Letterbox/ForceCameraRatio.cs" Line="181" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

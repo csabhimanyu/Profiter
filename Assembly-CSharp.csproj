@@ -60,13 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
+    <Compile Include="Assets\CameraResolution.cs" />
     <Compile Include="Assets\Scripts\BackendConnector\SocketIO.cs" />
-    <Compile Include="Assets\Scripts\camerascreenresolution.cs" />
-    <Compile Include="Assets\Scripts\ProfiterShortestPathLib.cs" />
-    <Compile Include="Assets\Scripts\Truck_1_Mover.cs" />
-    <Compile Include="Assets\Scripts\Truck_2_Mover.cs" />
-    <Compile Include="Assets\Scripts\Truck_3_Mover.cs" />
-    <Compile Include="Assets\Scripts\WaypointCollection.cs" />
+    <Compile Include="Assets\Scripts\Camera\camerascreenresolution.cs" />
+    <Compile Include="Assets\Scripts\Cards\Card Management.cs" />
+    <Compile Include="Assets\Scripts\Trucks\ProfiterShortestPathLib.cs" />
+    <Compile Include="Assets\Scripts\Trucks\Truck_1_Mover.cs" />
+    <Compile Include="Assets\Scripts\Trucks\Truck_2_Mover.cs" />
+    <Compile Include="Assets\Scripts\Trucks\Truck_3_Mover.cs" />
+    <Compile Include="Assets\Scripts\Trucks\WaypointCollection.cs" />
+    <Compile Include="Assets\Test.cs" />
     <None Include="Assets\JsonDotNet\link.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/sagarsarma/Documents/GitHub/profitier-game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

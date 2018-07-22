@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "profitier-game", "Assembly-CSharp.csproj", "{5BDB3431-6373-41B7-FC93-7C496A156380}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "profitier-game", "Assembly-CSharp-Editor.csproj", "{D0C543D3-6813-A6DA-9F07-264EFC3D0B33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{5BDB3431-6373-41B7-FC93-7C496A156380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BDB3431-6373-41B7-FC93-7C496A156380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BDB3431-6373-41B7-FC93-7C496A156380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C543D3-6813-A6DA-9F07-264EFC3D0B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C543D3-6813-A6DA-9F07-264EFC3D0B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C543D3-6813-A6DA-9F07-264EFC3D0B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C543D3-6813-A6DA-9F07-264EFC3D0B33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
