@@ -23,7 +23,7 @@ public class Truck_1_Mover : MonoBehaviour
 	{
 		my_collection = FindObjectOfType<WaypointCollection> ();
 
-        //temp implementation start
+        /*temp implementation start
         string filepath = @"C:\Users\csabh\Desktop\RouteIdentifier.json";
         string json;
 
@@ -51,7 +51,7 @@ public class Truck_1_Mover : MonoBehaviour
         {
             Debug.Log(item);
         }
-        //temp implementation end
+        //temp implementation end */
     }
 
 

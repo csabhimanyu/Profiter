@@ -64,7 +64,7 @@
     <Compile Include="Assets\CameraResolution.cs" />
     <Compile Include="Assets\Scripts\BackendConnector\SocketIO.cs" />
     <Compile Include="Assets\Scripts\Camera\camerascreenresolution.cs" />
-    <Compile Include="Assets\Scripts\Cards\Card Management.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardManagement.cs" />
     <Compile Include="Assets\Scripts\Trucks\ProfiterShortestPathLib.cs" />
     <Compile Include="Assets\Scripts\Trucks\Truck_1_Mover.cs" />
     <Compile Include="Assets\Scripts\Trucks\Truck_2_Mover.cs" />

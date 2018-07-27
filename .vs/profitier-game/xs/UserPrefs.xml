@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{5BDB3431-6373-41B7-FC93-7C496A156380}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Auto Letterbox/ForceCameraRatio.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cards/CardManagement.cs">
     <Files>
-      <File FileName="Assets/Scripts/Cards/Card Management.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Camera/camerascreenresolution.cs" Line="1" Column="1" />
-      <File FileName="Assets/CameraResolution.cs" Line="53" Column="5" />
-      <File FileName="Assets/Test.cs" Line="53" Column="3" />
-      <File FileName="Assets/Auto Letterbox/ForceCameraRatio.cs" Line="181" Column="1" />
+      <File FileName="Assets/Auto Letterbox/ForceCameraRatio.cs" Line="193" Column="50" />
+      <File FileName="Assets/Auto Letterbox/Editor/ForceCameraRatioEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Trucks/Truck_1_Mover.cs" Line="54" Column="37" />
+      <File FileName="Assets/Scripts/Cards/CardManagement.cs" Line="14" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
