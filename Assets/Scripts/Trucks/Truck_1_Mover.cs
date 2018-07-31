@@ -3,7 +3,7 @@ using UnityEngine;
 using System.IO;
 using Dijkstra.NET.Model;
 using Dijkstra.NET.ShortestPath;
-using System.Collections.Generic;
+
 
 public class Truck_1_Mover : MonoBehaviour 
 {
@@ -17,11 +17,11 @@ public class Truck_1_Mover : MonoBehaviour
 	private Vector3 direction;																				//
 	public float speed;																						//speed of the truck
 	public float rotate_speed;																				//rotation speed of the truck		
-	private bool car_1_go;                                                                                  //for trcuk button
+	private bool car_1_go;																					//for trcuk button
 
-    void Start()
-    {
-        my_collection = FindObjectOfType<WaypointCollection>();
+	void Start () 
+	{
+		my_collection = FindObjectOfType<WaypointCollection> ();
 
         /*temp implementation start
         string filepath = @"C:\Users\csabh\Desktop\RouteIdentifier.json";
@@ -52,19 +52,6 @@ public class Truck_1_Mover : MonoBehaviour
             Debug.Log(item);
         }
         //temp implementation end */
-
-        //Temp Implementation for CardManagement
-        CardManagement updateCardData = new CardManagement();
-        
-        
-        
-        
-        Debug.Log(updateCardData.updateCardDataList.Count);
-
-        
-
-        
-        
     }
 
 
