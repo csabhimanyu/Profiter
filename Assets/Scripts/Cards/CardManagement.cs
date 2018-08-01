@@ -7,7 +7,8 @@ using UnityEngine;
 public class CardManagement : MonoBehaviour
 {
 
-    GameObject cardObjectList;
+    
+    
     public int noOfCards;
     public class ProfiterCardMgmt
     {
@@ -21,11 +22,12 @@ public class CardManagement : MonoBehaviour
         public int originIndex { get; set; }
         public int pricePerTonne { get; set; } //The goods price per tonne
         public bool cardCreated { get; set; }
+        public GameObject cardGameObj { get; set; }
 
         //Default constructor
         public ProfiterCardMgmt() { }
 
-        public ProfiterCardMgmt(int cardIndex, int cardItem, int goodsQty, bool cardValidity, int timeInSeconds, int originIndex, char cardCategory, int pricePerTonne, bool cardCreated = false)
+        public ProfiterCardMgmt(int cardIndex, int cardItem, int goodsQty, bool cardValidity, int timeInSeconds, int originIndex, char cardCategory, int pricePerTonne, GameObject cardGameObj, bool cardCreated = false)
         {
             this.cardIndex = cardIndex;
             this.cardItem = cardItem;
@@ -36,6 +38,7 @@ public class CardManagement : MonoBehaviour
             this.cardCategory = cardCategory;
             this.pricePerTonne = pricePerTonne;
             this.cardCreated = cardCreated;
+            this.cardGameObj = cardGameObj;
         }
     }
 
@@ -52,10 +55,11 @@ public class CardManagement : MonoBehaviour
     /// <param name="jsonObjFromBackend"></param>
     public void UpdateCard(JObject jsonObjFromBackend)
     {
+        GameObject cardGameObj = new GameObject();
         switch (jsonObjFromBackend["createcard"].ToString())
         {
             case "createcard":
-                updateCardDataList.Add(new 
+                updateCardDataList.Add(new
                     ProfiterCardMgmt(
                         Int32.Parse(jsonObjFromBackend["cardIndex"].ToString()),
                         Int32.Parse(jsonObjFromBackend["cardItem"].ToString()),
@@ -64,7 +68,8 @@ public class CardManagement : MonoBehaviour
                         Int32.Parse(jsonObjFromBackend["timeInSeconds"].ToString()),
                         Int32.Parse(jsonObjFromBackend["originIndex"].ToString()),
                         Char.Parse(jsonObjFromBackend["cardCategory"].ToString()),
-                        Int32.Parse(jsonObjFromBackend["pricePerTonne"].ToString())
+                        Int32.Parse(jsonObjFromBackend["pricePerTonne"].ToString()),
+                        cardGameObj
                     ));
                 break;
 
@@ -80,12 +85,14 @@ public class CardManagement : MonoBehaviour
                         Int32.Parse(jsonObjFromBackend["timeInSeconds"].ToString()),
                         Int32.Parse(jsonObjFromBackend["originIndex"].ToString()),
                         Char.Parse(jsonObjFromBackend["cardCategory"].ToString()),
-                        Int32.Parse(jsonObjFromBackend["pricePerTonne"].ToString())
+                        Int32.Parse(jsonObjFromBackend["pricePerTonne"].ToString()),
+                        cardGameObj
                     ));
                 }
                 break;
 
             case "deletecard":
+                //This should destroy the game object as well. Should be tested.
                 DeleteCard(Int32.Parse(jsonObjFromBackend["cardIndex"].ToString()));
                 break;
             default:
