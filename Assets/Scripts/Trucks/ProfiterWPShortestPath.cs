@@ -6,7 +6,8 @@ using Dijkstra.NET.Model;
 using Dijkstra.NET.ShortestPath;
 using System;
 
-public class ProfiterWPShortestPath : MonoBehaviour {
+public class ProfiterWPShortestPath : MonoBehaviour
+{
     /// <summary>
     /// Finding the shortest distance to move the truck along the city
     /// </summary>
@@ -18,39 +19,26 @@ public class ProfiterWPShortestPath : MonoBehaviour {
         List<string> pathList = new List<string>();
         var graph = new Graph<int, string>();
 
-        graph.AddNode(1); //0th WayPoint
-        graph.AddNode(2); 
-        graph.AddNode(3); 
-        graph.AddNode(4);
-        graph.AddNode(5);
-        graph.AddNode(6);
-        graph.AddNode(7);
-        graph.AddNode(8); //7th WayPoint
+        for (int i = 0; i < 24; i++)
+        {
+            graph.AddNode(i + 1);
+        }
 
-        //Connecting WayPoints on both sides
-        graph.Connect(0, 1, 1, "");
-        graph.Connect(1, 0, 1, "");
+        for (int i = 0; i < 24; i++)
+        {
+            if (i != 23)
+            {
+                graph.Connect(Convert.ToUInt32(i), Convert.ToUInt32(i + 1), 1, "");
+                graph.Connect(Convert.ToUInt32(i + 1), Convert.ToUInt32(i), 1, "");
+            }
 
-        graph.Connect(1, 2, 1, "");
-        graph.Connect(2, 1, 1, "");
+            else
+            {
+                graph.Connect(Convert.ToUInt32(i), Convert.ToUInt32(0), 1, "");
+                graph.Connect(Convert.ToUInt32(0), Convert.ToUInt32(i), 1, "");
+            }
 
-        graph.Connect(2, 3, 1, "");
-        graph.Connect(3, 2, 1, "");
-
-        graph.Connect(3, 4, 1, "");
-        graph.Connect(4, 3, 1, "");
-
-        graph.Connect(4, 5, 1, "");
-        graph.Connect(5, 4, 1, "");
-
-        graph.Connect(5, 6, 1, "");
-        graph.Connect(6, 5, 1, "");
-
-        graph.Connect(6, 7, 1, "");
-        graph.Connect(7, 6, 1, "");
-
-        graph.Connect(7, 0, 1, "");
-        graph.Connect(0, 7, 1, "");
+        }
 
         var dijkstra = new Dijkstra<int, string>(graph);
 
