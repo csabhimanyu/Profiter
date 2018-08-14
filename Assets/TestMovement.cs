@@ -29,7 +29,7 @@ public class TestMovement : MonoBehaviour {
 
     void OnComplete()
     {
-        transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
+        //transform.GetChild(0).GetComponent<TrailRenderer>().Clear();
     }
     // Update is called once per frame
     void Update () {
