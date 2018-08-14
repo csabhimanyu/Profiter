@@ -178,7 +178,6 @@ public class CardManagement : MonoBehaviour
     }
     public void Next()
     {
-        print("@!#$%");
        DisplayUpdate(1);
     }
     public void Prev()
