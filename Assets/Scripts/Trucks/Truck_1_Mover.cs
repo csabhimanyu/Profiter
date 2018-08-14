@@ -3,14 +3,16 @@ using UnityEngine;
 using System.IO;
 using Dijkstra.NET.Model;
 using Dijkstra.NET.ShortestPath;
-
+using System.Collections.Generic;
 
 public class Truck_1_Mover : MonoBehaviour 
 {
+    WaypointCollection waypointCollectionObj = new WaypointCollection();
 																										
 	public int start_option;																				//for start
-	public int end_option;																					//for destination 
-	private WaypointCollection my_collection;																//waypoint class refrence
+	public int end_option;                                                                                  //for destination 
+    Transform[] myWPCollection;
+    private WaypointCollection my_collection;																//waypoint class refrence
 	int current_transform=0;																				//tracking current point int the selected array
 	private float angle;																					//for rotation calculation
 	private Quaternion rotate_angle;																		//
@@ -21,7 +23,9 @@ public class Truck_1_Mover : MonoBehaviour
 
 	void Start () 
 	{
-		my_collection = FindObjectOfType<WaypointCollection> ();
+        myWPCollection = waypointCollectionObj.getShortestTruckTransitionPath("kashmir", "delhi", "7_wp_kashmir").ToArray();
+        car_1_go = true;
+        //my_collection = FindObjectOfType<WaypointCollection> ();
 
         /*temp implementation start
         string filepath = @"C:\Users\csabh\Desktop\RouteIdentifier.json";
@@ -57,73 +61,79 @@ public class Truck_1_Mover : MonoBehaviour
 
     void Update ()
 	{
-		if (car_1_go) 
-		{
-			switch (start_option) 
-			{
-			case 1:
-				if((end_option)==0)				
-					if (current_transform < my_collection.kashmir_to_mumbai.Length) 
-					{
-						direction = my_collection.kashmir_to_mumbai [current_transform].position - transform.position;
-						angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
-						rotate_angle = Quaternion.AngleAxis (angle, Vector3.forward);
-						if (transform.position == my_collection.kashmir_to_mumbai [current_transform].position) 
-						{
-							current_transform++;
-						}
-					}
-				if((end_option)==1)
-				{
-					if (current_transform < my_collection.kashmir_to_kanyakumari.Length) 
-					{
-						direction = my_collection.kashmir_to_kanyakumari [current_transform].position - transform.position;
-						angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
-						rotate_angle = Quaternion.AngleAxis (angle, Vector3.forward);
-						if (transform.position == my_collection.kashmir_to_kanyakumari [current_transform].position) 
-						{
-							current_transform++;
-						}
-					}
-					
-				}
-				break;
-			}
-	}
-	}
+        if (car_1_go)
+        {
+            switch (start_option)
+            {
+                case 1:
+                    if ((start_option) == 0)
+                        if (current_transform < myWPCollection.Length)
+                        {
+                            direction = myWPCollection[current_transform].position - transform.position;
+                            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                            rotate_angle = Quaternion.AngleAxis(angle, Vector3.forward);
+                            if (transform.position == myWPCollection[current_transform].position)
+                            {
+                                current_transform++;
+                            }
+                        }
+                    if ((end_option) == 1)
+                    {
+                        if (current_transform < myWPCollection.Length)
+                        {
+                            direction = myWPCollection[current_transform].position - transform.position;
+                            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                            rotate_angle = Quaternion.AngleAxis(angle, Vector3.forward);
+                            if (transform.position == myWPCollection[current_transform].position)
+                            {
+                                current_transform++;
+                            }
+                        }
+
+                    }
+            break;
+        }
+    }
+}
 			
 			
 
 	void FixedUpdate()
 	{
-		if (car_1_go) 
-		{
-			switch (start_option) 
-			{
-			case 1:
-				if (end_option == 0) {
-					if (current_transform < my_collection.kashmir_to_mumbai.Length) {
-						transform.position = Vector3.MoveTowards (transform.position, my_collection.kashmir_to_mumbai [current_transform].position, speed * Time.deltaTime);
-						transform.rotation = Quaternion.Lerp (transform.rotation, rotate_angle, rotate_speed * Time.deltaTime);
-					}
-				}
+        if (car_1_go)
+        {
+            switch (start_option)
+            {
+                case 1:
+                    if (start_option == 0)
+                    {
+                        if (current_transform < myWPCollection.Length)
+                        {
+                            transform.position = Vector3.MoveTowards(transform.position, myWPCollection[current_transform].position, speed * Time.deltaTime);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, rotate_angle, rotate_speed * Time.deltaTime);
+                        }
+                    }
 
-				if (end_option == 1) {
-					if (current_transform < my_collection.kashmir_to_kanyakumari.Length) {
-						transform.position = Vector3.MoveTowards (transform.position, my_collection.kashmir_to_kanyakumari [current_transform].position, speed * Time.deltaTime);
-						transform.rotation = Quaternion.Lerp (transform.rotation, rotate_angle, rotate_speed * Time.deltaTime);
-					}
-				}
-				break;
-			}
-			
-		
-		}
-			
-	}
+                    if (end_option == 1)
+                    {
+                        if (current_transform < myWPCollection.Length)
+                        {
+                            transform.position = Vector3.MoveTowards(transform.position, myWPCollection[current_transform].position, speed * Time.deltaTime);
+                            transform.rotation = Quaternion.Lerp(transform.rotation, rotate_angle, rotate_speed * Time.deltaTime);
+                        }
+                    }
+                    break;
+            }
+
+
+        }
+
+    }
+    
 
 	public void Car_1_Button()
 	{
+        myWPCollection = waypointCollectionObj.getShortestTruckTransitionPath("kashmir", "delhi", "7_wp_kashmir").ToArray();
 		car_1_go = true;
 	}
 }
